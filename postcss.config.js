@@ -1,8 +1,5 @@
 'use strict';
 
 module.exports = {
-  plugins: {
-    'postcss-flexbugs-fixes': {},
-    autoprefixer: {},
-  },
+  plugins: [require('autoprefixer')],
 };
