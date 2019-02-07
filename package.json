@@ -10,6 +10,7 @@
     "flow": "flow",
     "lint": "eslint . --ext jsx,js",
     "lint:fix": "eslint . --ext jsx,js --fix",
+    "lint:check": "eslint --print-config . | eslint-config-prettier-check",
     "postinstall": "flow-typed install",
     "start": "webpack-serve --config ./build/webpack.dev.conf.js",
     "test": "node scripts/test.js"
@@ -53,7 +54,7 @@
     "enzyme-adapter-react-16": "1.1.1",
     "enzyme-to-json": "3.3.4",
     "eslint": "5.2.0",
-    "eslint-config-prettier": "2.9.0",
+    "eslint-config-prettier": "4.0.0",
     "eslint-friendly-formatter": "4.0.1",
     "eslint-import-resolver-webpack": "0.10.1",
     "eslint-loader": "2.1.2",
