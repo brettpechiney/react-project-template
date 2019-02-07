@@ -26,11 +26,6 @@ describe('dynamicImport', () => {
     expect(dynamicImportMock).toHaveBeenCalled();
   });
 
-  it("returns the 'LoadingIndicator' component while 'importComponent' is resolving", () => {
-    const renderedIndicator = shallow(<LoadingIndicator />);
-    expect(shallowWrapper.html()).toMatch(renderedIndicator.html());
-  });
-
   it("returns a component when 'importComponent' successfully resolves", async done => {
     setTimeout(() => {
       shallowWrapper.update();
