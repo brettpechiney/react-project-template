@@ -28,6 +28,7 @@ module.exports = {
     '<rootDir>/environments/jest/setup-tests.js',
     'jest-prop-type-error',
   ],
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   testEnvironment: 'jest-environment-jsdom-global',
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}',
