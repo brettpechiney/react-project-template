@@ -69,6 +69,9 @@ module.exports = {
         config: 'build/webpack.base.conf.js',
       },
     },
+    react: {
+      version: 'detect',
+    },
   },
 
   // Stop ESLint from looking for a configuration file in parent folders
