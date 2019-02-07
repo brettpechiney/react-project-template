@@ -72,7 +72,7 @@ describe('apiService', () => {
       },
     };
 
-    expect(() => invoke(action)).toThrowError(PathNotSpecifiedError);
+    expect(() => invoke(action)).toThrow(PathNotSpecifiedError);
   });
 
   it("throws RequestMethodNotSpecifiedError when 'method' property is not set", () => {
@@ -86,7 +86,7 @@ describe('apiService', () => {
       },
     };
 
-    expect(() => invoke(action)).toThrowError(RequestMethodNotSpecifiedError);
+    expect(() => invoke(action)).toThrow(RequestMethodNotSpecifiedError);
   });
 
   it("throws InvalidRequestMethodError when 'method' property is invalid", () => {
@@ -101,6 +101,6 @@ describe('apiService', () => {
       },
     };
 
-    expect(() => invoke(action)).toThrowError(InvalidRequestMethodError);
+    expect(() => invoke(action)).toThrow(InvalidRequestMethodError);
   });
 });
