@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import dynamicImport from './dynamicImport';
-import { LoadingIndicator } from 'common/widgets';
 
 describe('dynamicImport', () => {
   const dynamicImportMock = jest.fn().mockResolvedValue({
