@@ -1,14 +1,10 @@
-.header--container {
+.app-header {
   background-color: #222;
   margin-bottom: 20px;
 
-  .app-logo {
-    animation: home-logo-spin infinite 20s linear;
-    height: 80px;
-  }
-
   .primary-navigation {
     display: flex;
+    flex-direction: row;
     width: 100%;
     height: 20%;
     align-items: center;
@@ -27,6 +23,12 @@
 
     .active {
       color: white;
+    }
+
+    .app-logo {
+      animation: home-logo-spin infinite 20s linear;
+      height: 80px;
+      max-width: 113px; // Addresses IE 11 Flex Bug: https://github.com/philipwalton/flexbugs#flexbug-2
     }
   }
 }

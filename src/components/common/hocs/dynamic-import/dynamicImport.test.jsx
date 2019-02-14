@@ -8,7 +8,9 @@ describe('dynamicImport', () => {
       return <div>component</div>;
     },
   });
-  const InstantiatedComponent = React.createElement(dynamicImport(dynamicImportMock));
+  const InstantiatedComponent = React.createElement(
+    dynamicImport(dynamicImportMock)
+  );
   const shallowWrapper = shallow(InstantiatedComponent);
 
   it('returns a function', () => {
