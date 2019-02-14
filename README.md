@@ -62,6 +62,11 @@ npm run lint
 npm run lint:fix
 ```
 
+### Run eslint-config-prettier's CLI Conflict Detection Tool
+```
+npm run lint:check
+```
+
 ### Run Flow Type Checking
 ```
 npm run flow

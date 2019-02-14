@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import dynamicImport from './dynamicImport';
-import { LoadingIndicator } from 'common/widgets';
 
 describe('dynamicImport', () => {
   const dynamicImportMock = jest.fn().mockResolvedValue({
@@ -24,11 +23,6 @@ describe('dynamicImport', () => {
 
   it("calls the 'importComponent' function", () => {
     expect(dynamicImportMock).toHaveBeenCalled();
-  });
-
-  it("returns the 'LoadingIndicator' component while 'importComponent' is resolving", () => {
-    const renderedIndicator = shallow(<LoadingIndicator />);
-    expect(shallowWrapper.html()).toMatch(renderedIndicator.html());
   });
 
   it("returns a component when 'importComponent' successfully resolves", async done => {

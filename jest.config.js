@@ -29,10 +29,6 @@ module.exports = {
     'jest-prop-type-error',
   ],
   testEnvironment: 'jest-environment-jsdom-global',
-  testMatch: [
-    '<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}',
-    '<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}',
-  ],
   testURL: 'http://localhost/',
   transform: {
     '^.+\\.(js|jsx|mjs)$': '<rootDir>/node_modules/babel-jest',

@@ -62,22 +62,20 @@ module.exports = {
 
   plugins: ['jest', 'jsx-a11y', 'flowtype', 'react', 'import', 'prettier'],
 
-  // Check if imports resolve
   settings: {
     'import/resolver': {
       webpack: {
         config: 'build/webpack.base.conf.js',
       },
     },
+    react: {
+      version: 'detect',
+    },
   },
 
-  // Stop ESLint from looking for a configuration file in parent folders
   root: true,
 
-  // We're stricter than the default config, mostly.
   rules: {
-    'comma-dangle': [ERROR, 'always-multiline'],
-    'dot-location': [ERROR, 'property'],
     eqeqeq: [ERROR, 'allow-null'],
     'import/dynamic-import-chunkname': ERROR,
     'import/no-unresolved': ERROR,
@@ -86,7 +84,6 @@ module.exports = {
     'no-console': WARN,
     'no-shadow': ERROR,
     'no-unused-expressions': ERROR,
-    'space-before-function-paren': [ERROR, 'never'],
 
     // React and JSX
     'react/jsx-boolean-value': [ERROR, 'always'],

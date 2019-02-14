@@ -10,7 +10,7 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    app: ['babel-polyfill', './src/main.jsx'],
+    app: ['./src/main.jsx'],
   },
   externals: {
     variables: 'variables',
@@ -26,6 +26,7 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       common: resolve('src/components/common'),
+      store: resolve('src/store'),
     },
   },
   module: {
@@ -42,10 +43,8 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: [resolve('src')],
+        exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
-        query: {
-          presets: ['env', 'stage-2', 'react'],
-        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
