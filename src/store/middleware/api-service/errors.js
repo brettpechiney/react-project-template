@@ -22,4 +22,8 @@ function RequestMethodNotSpecifiedError(type) {
 }
 RequestMethodNotSpecifiedError.prototype = Error.prototype;
 
-export { InvalidRequestMethodError, PathNotSpecifiedError, RequestMethodNotSpecifiedError };
+export {
+  InvalidRequestMethodError,
+  PathNotSpecifiedError,
+  RequestMethodNotSpecifiedError,
+};

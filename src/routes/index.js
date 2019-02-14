@@ -17,11 +17,15 @@ const routes = [
   },
   {
     path: '/team',
-    component: dynamicImport(() => import(/* webpackChunkName: "team" */ '@/components/team')),
+    component: dynamicImport(() =>
+      import(/* webpackChunkName: "team" */ '@/components/team')
+    ),
   },
   {
     path: '/about',
-    component: dynamicImport(() => import(/* webpackChunkName: "about" */ '@/components/about')),
+    component: dynamicImport(() =>
+      import(/* webpackChunkName: "about" */ '@/components/about')
+    ),
   },
   {
     path: '/contact',
