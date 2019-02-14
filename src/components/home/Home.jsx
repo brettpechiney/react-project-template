@@ -2,8 +2,8 @@ import React from 'react';
 import './home.scss';
 
 const Home = () => (
-  <section className="home--container">
-    <p className="home-intro">
+  <section styleName="home">
+    <p styleName="intro">
       This application was made with{' '}
       <span role="img" aria-label="love">
         ❤️

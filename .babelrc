@@ -24,6 +24,17 @@
     "@babel/plugin-proposal-export-namespace-from",
     "@babel/plugin-proposal-numeric-separator",
     "@babel/plugin-proposal-throw-expressions",
+    [
+      "babel-plugin-react-css-modules",
+      {
+        "filetypes": {
+          ".scss": {
+            "syntax": "postcss-scss",
+          },
+        },
+        "webpackHotModuleReloading": true,
+      }
+    ],
     "react-hot-loader/babel",
   ],
   "env": {

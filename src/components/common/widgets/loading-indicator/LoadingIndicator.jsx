@@ -15,11 +15,15 @@ const defaultProps = {
 };
 
 const LoadingIndicator = props => (
-  <div className="loading--container">
-    <img src={indicator} alt="loading..." width={props.width} height={props.height} />
+  <div styleName="loading-indicator">
+    <img
+      src={indicator}
+      alt="loading..."
+      width={props.width}
+      height={props.height}
+    />
   </div>
 );
-
 LoadingIndicator.propTypes = propTypes;
 LoadingIndicator.defaultProps = defaultProps;
 

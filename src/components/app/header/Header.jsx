@@ -4,13 +4,13 @@ import logo from '@/assets/icons/react-logo.svg';
 import './header.scss';
 
 const Header = () => (
-  <header className="header--container">
-    <nav className="primary-navigation">
+  <header styleName="app-header">
+    <nav styleName="primary-navigation">
       <NavLink exact={true} to="/">
         Home
       </NavLink>
       <NavLink to="/team">Team</NavLink>
-      <img src={logo} className="app-logo" alt="logo" />
+      <img src={logo} styleName="app-logo" alt="logo" />
       <NavLink to="/about">About</NavLink>
       <NavLink to="/contact">Contact</NavLink>
     </nav>
