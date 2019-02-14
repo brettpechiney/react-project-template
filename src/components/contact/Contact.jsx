@@ -1,5 +1,5 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import './contact.scss';
 
 const Contact = () => (
@@ -8,4 +8,4 @@ const Contact = () => (
   </section>
 );
 
-export default hot(module)(Contact);
+export default hot(Contact);

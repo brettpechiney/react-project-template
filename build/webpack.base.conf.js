@@ -26,6 +26,7 @@ module.exports = {
     alias: {
       '@': resolve('src'),
       common: resolve('src/components/common'),
+      'react-dom': '@hot-loader/react-dom',
       store: resolve('src/store'),
     },
   },

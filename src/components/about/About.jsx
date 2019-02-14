@@ -1,5 +1,5 @@
 import React from 'react';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import './about.scss';
 
 const About = () => (
@@ -8,4 +8,4 @@ const About = () => (
   </section>
 );
 
-export default hot(module)(About);
+export default hot(About);

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import routes from '@/routes';
 import Header from './header';
 import Footer from './footer';
@@ -19,4 +19,4 @@ const App = () => (
   </Fragment>
 );
 
-export default hot(module)(App);
+export default hot(App);
