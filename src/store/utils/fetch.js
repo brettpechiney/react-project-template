@@ -2,7 +2,6 @@
  * @fileoverview Defines an abstracted method for handling HTTP requests.
  */
 import axios from 'axios';
-import getAuthToken from './get-auth-token';
 
 /**
  * Sends an HTTP/S network request.
@@ -18,7 +17,6 @@ function request(url, method, data) {
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${getAuthToken()}`,
     },
     baseURL: `${apiUrl}/`,
     url,

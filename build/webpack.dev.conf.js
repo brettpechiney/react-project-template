@@ -2,7 +2,6 @@
 
 const baseWebpackConfig = require('./webpack.base.conf');
 const merge = require('webpack-merge');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 const webpackServeConfig = require('./local-server');
