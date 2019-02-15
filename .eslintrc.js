@@ -16,10 +16,8 @@ module.exports = {
     'eslint:recommended',
     'plugin:jest/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:flowtype/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
-    'prettier/flowtype',
     'prettier/react',
   ],
 
@@ -60,7 +58,7 @@ module.exports = {
     },
   },
 
-  plugins: ['jest', 'jsx-a11y', 'flowtype', 'react', 'import', 'prettier'],
+  plugins: ['jest', 'jsx-a11y', 'react', 'import', 'prettier'],
 
   settings: {
     'import/resolver': {
