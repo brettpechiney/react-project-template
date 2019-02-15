@@ -53,6 +53,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: environments.prod.index,
       template: 'index.html',
+      hash: true,
       inject: true,
       minify: {
         removeComments: true,
