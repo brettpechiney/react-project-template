@@ -17,7 +17,6 @@
         "legacy": true
       }
     ],
-    "@babel/plugin-proposal-function-sent",
     "@babel/plugin-proposal-numeric-separator",
     [
       "babel-plugin-react-css-modules",
