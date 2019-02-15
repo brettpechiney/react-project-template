@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
@@ -39,9 +39,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
-    }),
-    new UglifyJsPlugin({
-      sourceMap: true,
     }),
     // Extract CSS into its own file
     new MiniCssExtractPlugin({
@@ -76,6 +73,37 @@ const webpackConfig = merge(baseWebpackConfig, {
     ]),
   ],
   optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+        terserOptions: {
+          compress: {
+            // Be ready to change this if things start breaking:
+            // https://github.com/facebook/create-react-app/issues/2376
+            comparisons: true,
+            // Linting rules should prevent this from happening in the project
+            // but it doesn't hurt to provide an additional redundancy.
+            drop_console: true,
+            ecma: 5,
+            // Keep an eye on this. There was an issue but it seems to have been fixed:
+            // issue: https://github.com/terser-js/terser/issues/120
+            // fix: https://github.com/terser-js/terser/pull/144
+            inline: 3,
+            unsafe_Function: true,
+          },
+          output: {
+            ascii_only: true,
+            // TODO: Play around with this option.
+            comments: false,
+            ecma: 5,
+            // TODO: Play around with this option.
+            indent_level: 4,
+          },
+        },
+      }),
+    ],
     // Any required modules inside node_modules are extracted to vendor
     splitChunks: {
       cacheGroups: {
