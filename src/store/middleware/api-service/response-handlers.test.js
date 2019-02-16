@@ -1,6 +1,6 @@
 import { handleFulfilled, handleRejected } from './response-handlers';
 
-function create() {
+function setup() {
   const res = 'expected res';
   const err = 'expected err';
   const action = {
@@ -20,17 +20,17 @@ function create() {
   };
 }
 
+const { res, err, action, next } = setup();
+afterEach(() => next.mockReset());
+
 describe('handleFulfilled', () => {
   it("returns the 'res' parameter", () => {
-    const { res, action, next } = create();
-
     const actual = handleFulfilled(res, action, next);
 
     expect(actual).toMatch(res);
   });
 
   it("calls the 'next' function", () => {
-    const { res, action, next } = create();
     const expected = {
       type: `${action.type}_SUCCESS`,
       payload: res,
@@ -45,25 +45,16 @@ describe('handleFulfilled', () => {
 });
 
 describe('handleRejected', () => {
-  it('returns a promise', () => {
-    const { err, action, next } = create();
-
-    const actual = handleRejected(err, action, next);
-
-    expect(actual).toBeInstanceOf(Promise);
+  it('returns a promise', async () => {
+    await expect(handleRejected(err, action, next)).rejects.toEqual(err);
   });
 
-  it("calls the 'next' function", () => {
-    const { err, action, next } = create();
-    const expected = {
-      type: `${action.type}_FAILURE`,
-      payload: err,
-      meta: action.meta,
-    };
-
-    handleRejected(err, action, next);
-
-    expect(next).toHaveBeenCalledTimes(1);
-    expect(next).toHaveBeenCalledWith(expected);
+  it("calls the 'next' function", async () => {
+    expect.assertions(1);
+    try {
+      await handleRejected(err, action, next);
+    } catch (e) {
+      expect(next).toHaveBeenCalledTimes(1);
+    }
   });
 });

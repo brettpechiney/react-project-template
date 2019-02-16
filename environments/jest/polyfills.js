@@ -1,6 +1,3 @@
-/**
- * @fileoverview This file provides polyfills to Jest tests.
- */
 'use strict';
 
 global.requestAnimationFrame = cb => {
@@ -12,3 +9,7 @@ global.sessionStorage = {
   setItem: jest.fn(),
   clear: jest.fn(),
 };
+
+if (typeof window !== 'undefined') {
+  require('whatwg-fetch');
+}

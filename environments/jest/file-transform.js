@@ -1,6 +1,3 @@
-/**
- * @fileoverview This is a custom Jest transformer turning file imports into filenames.
- */
 'use strict';
 
 const path = require('path');
