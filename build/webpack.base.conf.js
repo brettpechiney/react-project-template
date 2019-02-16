@@ -44,6 +44,21 @@ module.exports = {
         test: /\.jsx?$/,
         include: [resolve('src')],
         exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              cacheCompression: true,
+              compact: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(js|mjs)$/,
+        include: /(node_modules|bower_components)/,
+        exclude: /@babel(?:\/|\\{1,2})runtime/,
         loader: 'babel-loader',
       },
       {
