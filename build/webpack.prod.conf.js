@@ -11,6 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -53,11 +54,17 @@ const webpackConfig = merge(baseWebpackConfig, {
       hash: true,
       inject: true,
       minify: {
-        removeComments: true,
         collapseWhitespace: true,
+        keepClosingSlash: true,
+        minifyCSS: true,
+        minifyJS: true,
+        minifyURL: true,
         removeAttributeQuotes: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true,
       },
-      chunksSortMode: 'dependency',
     }),
     // Keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
@@ -95,10 +102,8 @@ const webpackConfig = merge(baseWebpackConfig, {
           },
           output: {
             ascii_only: true,
-            // TODO: Play around with this option.
             comments: false,
             ecma: 5,
-            // TODO: Play around with this option.
             indent_level: 4,
           },
         },
@@ -106,24 +111,14 @@ const webpackConfig = merge(baseWebpackConfig, {
     ],
     // Any required modules inside node_modules are extracted to vendor
     splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /node_modules/,
-          name: 'vendor',
-          chunks: 'all',
-        },
-      },
+      chunks: 'all',
     },
-    // Extract webpack runtime and module manifest to its own file in order to
-    // prevent vendor hash from being updated whenever app bundle is updated
-    runtimeChunk: {
-      name: 'manifest',
-    },
+    // Keep the runtime chunk separated to enable long term caching.
+    runtimeChunk: true,
   },
   output: {
     path: environments.prod.assetsRoot,
     filename: utils.assetsPath('js/[name].[chunkhash].min.js'),
-    sourceMapFilename: utils.assetsPath('js/[name].[chunkhash].min.map'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash].min.js'),
   },
 });
@@ -133,4 +128,5 @@ if (environments.prod.bundleAnalyzerReport) {
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
-module.exports = webpackConfig;
+const smp = new SpeedMeasurePlugin();
+module.exports = smp.wrap(webpackConfig);
