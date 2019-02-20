@@ -15,8 +15,8 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
-  mode: 'production',
   devtool: 'source-map',
+  mode: 'production',
   performance: {
     hints: false,
   },
@@ -118,9 +118,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     runtimeChunk: true,
   },
   output: {
-    path: environments.prod.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].min.js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash].min.js'),
+    filename: utils.assetsPath('js/[name].[chunkhash].min.js'),
+    path: environments.prod.assetsRoot,
+    sourceMapFilename: utils.assetsPath('js/[name].[chunkhash].min.map'),
   },
 });
 
