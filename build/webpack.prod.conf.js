@@ -50,7 +50,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Generate dist index.html with correct asset hash for caching
     new HtmlWebpackPlugin({
       filename: environments.prod.index,
-      template: 'index.html',
       hash: true,
       inject: true,
       minify: {
@@ -65,6 +64,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
       },
+      title: 'React Project Template',
+      template: 'index.html',
     }),
     // Keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),

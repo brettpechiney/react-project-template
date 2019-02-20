@@ -41,9 +41,9 @@ module.exports = merge(baseWebpackConfig, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'index.html',
       inject: true,
+      title: 'React Project Template',
+      template: 'index.html',
     }),
     new FriendlyErrorsPlugin(),
   ],
