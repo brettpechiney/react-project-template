@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from '@/components/app';
-import configureStore from '@/store';
+import configureAppStore from '@/store';
 
-const store = configureStore();
+const store = configureAppStore();
 
 ReactDOM.render(
   <Provider store={store}>
