@@ -2,7 +2,7 @@
 
 exports[`<Footer /> renders correctly 1`] = `
 <footer
-  className="src-components-app-footer-___footer__app-footer___mZ1YI"
+  className="Footer__Wrapper-oj7b22-0 eCimMz"
 >
   <p>
     © 

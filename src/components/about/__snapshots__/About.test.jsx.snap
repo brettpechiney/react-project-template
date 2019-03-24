@@ -2,10 +2,10 @@
 
 exports[`<About /> renders correctly 1`] = `
 <section
-  className="src-components-about-___about__about___1YnBK"
+  className="About__Wrapper-r6nm9a-0 fvjtwO"
 >
   <p
-    className="src-components-about-___about__intro___1jpbi"
+    className="intro"
   >
     This is the about page.
   </p>

@@ -2,10 +2,10 @@
 
 exports[`<Contact /> renders correctly 1`] = `
 <section
-  className="src-components-contact-___contact__contact___2-wh2"
+  className="Contact__Wrapper-sc-1j1tiqv-0 ftifNd"
 >
   <p
-    className="src-components-contact-___contact__intro___3TQFO"
+    className="intro"
   >
     This is the contact page.
   </p>

@@ -1,7 +1,7 @@
 //  @flow
 import * as React from 'react';
 import indicator from '@/assets/images/loading-indicator.gif';
-import './loading-indicator.scss';
+import styled from 'styled-components';
 
 type Props = {
   pulse: boolean,
@@ -15,15 +15,21 @@ const defaultProps = {
 };
 
 const LoadingIndicator = (props: Props) => (
-  <div styleName="loading-indicator">
+  <Wrapper>
     <img
       src={indicator}
       alt="loading..."
       width={props.width}
       height={props.height}
     />
-  </div>
+  </Wrapper>
 );
 LoadingIndicator.defaultProps = defaultProps;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default LoadingIndicator;

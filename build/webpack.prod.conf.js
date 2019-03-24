@@ -9,8 +9,6 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -20,19 +18,6 @@ const webpackConfig = merge(baseWebpackConfig, {
   performance: {
     hints: false,
   },
-  module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
-      },
-    ],
-  },
   plugins: [
     new webpack.EnvironmentPlugin({
       BABEL_ENV: 'production',
@@ -41,13 +26,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
     }),
-    // Extract CSS into its own file
-    new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[chunkhash].min.css'),
-    }),
-    // Compress extracted CSS
-    new OptimizeCssAssetsPlugin(),
-    // Generate dist index.html with correct asset hash for caching
     new HtmlWebpackPlugin({
       filename: environments.prod.index,
       hash: true,

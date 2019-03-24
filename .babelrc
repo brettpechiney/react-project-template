@@ -12,32 +12,15 @@
   "plugins": [
     "@babel/plugin-syntax-dynamic-import",
     "@babel/plugin-proposal-class-properties",
-    [
-      "babel-plugin-react-css-modules",
-      {
-        "filetypes": {
-          ".scss": {
-            "syntax": "postcss-scss",
-          },
-        },
-        "webpackHotModuleReloading": true,
-      }
-    ],
     "react-hot-loader/babel",
   ],
   "env": {
     "production": {
-      "plugins": [
-        [
-          "transform-react-remove-prop-types",
-          {
-            "removeImport": true
-          }
-        ]
-      ]
+      "plugins": ["babel-plugin-styled-components"]
     },
     "test": {
       "plugins": [
+        "babel-plugin-styled-components",
         "dynamic-import-node"
       ]
     }

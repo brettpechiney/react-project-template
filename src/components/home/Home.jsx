@@ -1,16 +1,26 @@
 import React from 'react';
-import './home.scss';
+import styled from 'styled-components';
 
 const Home = () => (
-  <section styleName="home">
-    <p styleName="intro">
+  <Wrapper>
+    <p className="intro">
       This application was made with{' '}
       <span role="img" aria-label="love">
         ❤️
       </span>{' '}
       by Brett
     </p>
-  </section>
+  </Wrapper>
 );
+
+const Wrapper = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .intro {
+    font-size: large;
+  }
+`;
 
 export default Home;
