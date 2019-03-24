@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Team /> renders correctly 1`] = `
+<section
+  className="src-components-team-___team__team___1IUwF"
+>
+  <p
+    className="src-components-team-___team__intro___KGWa0"
+  >
+    This is the team page.
+  </p>
+</section>
+`;

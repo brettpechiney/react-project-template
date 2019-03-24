@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingIndicator /> renders correctly 1`] = `
+<div
+  className="src-components-common-widgets-loading-indicator-___loading-indicator__loading-indicator___13bH5"
+>
+  <img
+    alt="loading..."
+    height="80px"
+    src="loading-indicator.gif"
+    width="80px"
+  />
+</div>
+`;
