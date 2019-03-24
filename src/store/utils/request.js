@@ -1,4 +1,6 @@
-async function request(url, method, body) {
+// @flow
+
+async function request(url: string, method: string, body: any) {
   const { apiUrl = 'http://localhost:8080' } = window.variables;
   // Make sure this handles CSRF.
   const res = await fetch(`${apiUrl}/${url}`, {
@@ -15,7 +17,7 @@ async function request(url, method, body) {
   return await parseStatus(res.status, res.json());
 }
 
-function parseStatus(status, res) {
+function parseStatus(status: number, res: Promise<any>): Promise<any> {
   return new Promise((resolve, reject) => {
     if (status >= 200 && status < 300) {
       res.then(response => resolve(response));

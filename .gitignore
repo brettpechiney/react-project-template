@@ -16,7 +16,6 @@ chrome-user-data
 *.swp
 *.swo
 test-report.xml
-flow-typed/
 node_modules/
 dist/
 npm-debug.log*

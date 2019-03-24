@@ -28,7 +28,6 @@ module.exports = {
   setupFiles: [
     '<rootDir>/environments/jest/polyfills.js',
     '<rootDir>/environments/jest/setup-tests.js',
-    'jest-prop-type-error',
   ],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['<rootDir>/scripts', '<rootDir>/environments'],
