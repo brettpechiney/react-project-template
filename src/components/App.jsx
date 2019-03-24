@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader/root';
 import { LoadingIndicator } from 'common/widgets';
 import routes from '@/routes';
-import Header from './header';
-import Footer from './footer';
+import Header from './Header';
+import Footer from './Footer';
 
 const App = () => (
   <>

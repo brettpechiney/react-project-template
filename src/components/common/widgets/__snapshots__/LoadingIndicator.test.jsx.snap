@@ -2,7 +2,7 @@
 
 exports[`<LoadingIndicator /> renders correctly 1`] = `
 <div
-  className="LoadingIndicator__Wrapper-sc-1rgdxcf-0 joJJXB"
+  className="LoadingIndicator__Wrapper-sc-2qo9ua-0 fYizDL"
 >
   <img
     alt="loading..."
