@@ -4,7 +4,7 @@
  * version 4.
  */
 import Home from '@/components/home';
-import { dynamicImport } from 'common/hocs';
+import { lazy } from 'react';
 
 /**
  * Please be sure to include the 'webpackChunkName' comment in all dynamic imports below.
@@ -17,19 +17,19 @@ const routes = [
   },
   {
     path: '/team',
-    component: dynamicImport(() =>
+    component: lazy(() =>
       import(/* webpackChunkName: "team" */ '@/components/team')
     ),
   },
   {
     path: '/about',
-    component: dynamicImport(() =>
+    component: lazy(() =>
       import(/* webpackChunkName: "about" */ '@/components/about')
     ),
   },
   {
     path: '/contact',
-    component: dynamicImport(() =>
+    component: lazy(() =>
       import(/* webpackChunkName: "contact" */ '@/components/contact')
     ),
   },
