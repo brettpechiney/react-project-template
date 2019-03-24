@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Contact /> renders correctly 1`] = `
+<section
+  className="src-components-contact-___contact__contact___2-wh2"
+>
+  <p
+    className="src-components-contact-___contact__intro___3TQFO"
+  >
+    This is the contact page.
+  </p>
+</section>
+`;

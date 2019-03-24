@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> renders correctly 1`] = `
+<footer
+  className="src-components-app-footer-___footer__app-footer___mZ1YI"
+>
+  <p>
+    © 
+    2019
+     Taekni, Inc.
+  </p>
+</footer>
+`;

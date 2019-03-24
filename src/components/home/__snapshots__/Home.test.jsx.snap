@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders correctly 1`] = `
+<section
+  className="src-components-home-___home__home___39l2d"
+>
+  <p
+    className="src-components-home-___home__intro___2XWcQ"
+  >
+    This application was made with
+     
+    <span
+      aria-label="love"
+      role="img"
+    >
+      ❤️
+    </span>
+     
+    by Brett
+  </p>
+</section>
+`;
