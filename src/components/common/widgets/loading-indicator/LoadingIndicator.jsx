@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+//  @flow
+import * as React from 'react';
 import indicator from '@/assets/images/loading-indicator.gif';
 import './loading-indicator.scss';
 
-const propTypes = {
-  pulse: PropTypes.bool,
-  width: PropTypes.string,
-  height: PropTypes.string,
+type Props = {
+  pulse: boolean,
+  width: string,
+  height: string,
 };
 
 const defaultProps = {
@@ -14,7 +14,7 @@ const defaultProps = {
   height: '80px',
 };
 
-const LoadingIndicator = props => (
+const LoadingIndicator = (props: Props) => (
   <div styleName="loading-indicator">
     <img
       src={indicator}
@@ -24,7 +24,6 @@ const LoadingIndicator = props => (
     />
   </div>
 );
-LoadingIndicator.propTypes = propTypes;
 LoadingIndicator.defaultProps = defaultProps;
 
 export default LoadingIndicator;

@@ -3,7 +3,7 @@
  * dispatched actions that require network communication.
  */
 
-import { request } from '../../utils';
+import { request } from '@/api';
 import { handleFulfilled, handleRejected } from './response-handlers';
 import {
   InvalidRequestMethodError,

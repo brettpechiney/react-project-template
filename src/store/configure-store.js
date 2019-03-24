@@ -1,23 +1,21 @@
-import { createStore, applyMiddleware, compose } from 'redux';
+import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
 import logger from 'redux-logger';
-import thunk from 'redux-thunk';
 import rootReducer from './slices/root-reducer';
 
-function configureStore(preloadedState) {
-  const middleware = [thunk];
-
+function configureAppStore(preloadedState) {
+  const middleware = [...getDefaultMiddleware()];
   const { logRedux = false } = window.variables;
   if (logRedux) {
     middleware.push(logger);
   }
 
-  const middlewareEnhancer = applyMiddleware(...middleware);
-  const storeEnhancers = [middlewareEnhancer];
-  const composedEnhancer = compose(...storeEnhancers);
-
-  const store = createStore(rootReducer, preloadedState, composedEnhancer);
+  const store = configureStore({
+    reducer: rootReducer,
+    middleware,
+    preloadedState,
+  });
 
   return store;
 }
 
-export default configureStore;
+export default configureAppStore;
