@@ -1,11 +1,21 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import './contact.scss';
+import styled from 'styled-components';
 
 const Contact = () => (
-  <section styleName="contact">
-    <p styleName="intro">This is the contact page.</p>
-  </section>
+  <Wrapper>
+    <p className="intro">This is the contact page.</p>
+  </Wrapper>
 );
+
+const Wrapper = styled.section`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .intro {
+    font-size: large;
+  }
+`;
 
 export default hot(Contact);

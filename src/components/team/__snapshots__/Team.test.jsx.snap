@@ -2,10 +2,10 @@
 
 exports[`<Team /> renders correctly 1`] = `
 <section
-  className="src-components-team-___team__team___1IUwF"
+  className="Team__Wrapper-sc-3e08sf-0 fuhCOO"
 >
   <p
-    className="src-components-team-___team__intro___KGWa0"
+    className="intro"
   >
     This is the team page.
   </p>

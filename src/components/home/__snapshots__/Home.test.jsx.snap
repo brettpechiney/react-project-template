@@ -2,10 +2,10 @@
 
 exports[`<Home /> renders correctly 1`] = `
 <section
-  className="src-components-home-___home__home___39l2d"
+  className="Home__Wrapper-sc-2dee5m-0 cjgKvf"
 >
   <p
-    className="src-components-home-___home__intro___2XWcQ"
+    className="intro"
   >
     This application was made with
      
