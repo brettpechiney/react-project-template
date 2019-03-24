@@ -3,7 +3,7 @@
  * dispatched actions that require network communication.
  */
 
-import { fetch } from '../../utils';
+import { request } from '../../utils';
 import { handleFulfilled, handleRejected } from './response-handlers';
 import {
   InvalidRequestMethodError,
@@ -34,7 +34,7 @@ const apiService = () => next => action => {
     throw new InvalidRequestMethodError(action.type, method);
   }
 
-  return fetch(path, method, body).then(
+  return request(path, method, body).then(
     res => handleFulfilled(res, action, next),
     err => handleRejected(err, action, next)
   );
