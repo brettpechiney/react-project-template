@@ -15,8 +15,8 @@ const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const webpackConfig = merge(baseWebpackConfig, {
-  mode: 'production',
   devtool: 'source-map',
+  mode: 'production',
   performance: {
     hints: false,
   },
@@ -50,7 +50,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     // Generate dist index.html with correct asset hash for caching
     new HtmlWebpackPlugin({
       filename: environments.prod.index,
-      template: 'index.html',
       hash: true,
       inject: true,
       minify: {
@@ -65,6 +64,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
       },
+      title: 'React Project Template',
+      template: 'index.html',
     }),
     // Keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
@@ -117,9 +118,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     runtimeChunk: true,
   },
   output: {
-    path: environments.prod.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash].min.js'),
     chunkFilename: utils.assetsPath('js/[name].[chunkhash].min.js'),
+    filename: utils.assetsPath('js/[name].[chunkhash].min.js'),
+    path: environments.prod.assetsRoot,
+    sourceMapFilename: utils.assetsPath('js/[name].[chunkhash].min.map'),
   },
 });
 

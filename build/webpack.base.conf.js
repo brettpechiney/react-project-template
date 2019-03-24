@@ -32,13 +32,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        loader: 'eslint-loader',
         enforce: 'pre',
         include: [resolve('src'), resolve('__tests__')],
+        loader: 'eslint-loader',
         options: {
+          cache: true,
           formatter: require('eslint-friendly-formatter'),
         },
+        test: /\.jsx?$/,
       },
       {
         test: /\.jsx?$/,

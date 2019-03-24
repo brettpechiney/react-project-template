@@ -1,6 +1,6 @@
 last 2 versions
 > 1%
-not ie < 11
+ie >= 11
 not dead
 not dead
 not op_mini all
