@@ -73,7 +73,7 @@
     "jest": "24.9.0",
     "jest-fetch-mock": "2.1.2",
     "koa-connect": "2.0.1",
-    "lint-staged": "8.1.5",
+    "lint-staged": "9.4.1",
     "ora": "4.0.2",
     "prettier": "1.18.2",
     "react-test-renderer": "16.8.5",
