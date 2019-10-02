@@ -6,7 +6,7 @@ const merge = require('webpack-merge');
 const path = require('path');
 const utils = require('./utils');
 const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
@@ -23,9 +23,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       BABEL_ENV: 'production',
       NODE_ENV: 'production',
     }),
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'),
-    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: environments.prod.index,
       hash: true,
