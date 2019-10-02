@@ -1,5 +1,5 @@
-// flow-typed signature: a3bf3a0265d2c1448e04855dac255b90
-// flow-typed version: c6154227d1/react-redux_v6.x.x/flow_>=v0.89.x <=v0.103.x
+// flow-typed signature: a09118d2093dc5b4eee045cd2a7dbf5a
+// flow-typed version: c6154227d1/react-redux_v6.x.x/flow_>=v0.104.x
 
 /**
 The order of type arguments for connect() is as follows:
@@ -205,6 +205,7 @@ declare module "react-redux" {
   declare export class Provider<Store> extends React$Component<{
     store: Store,
     children?: React$Node,
+    ...
   }> {}
 
   declare export function createProvider(
@@ -223,6 +224,7 @@ declare module "react-redux" {
     shouldHandleStateChanges?: boolean,
     storeKey?: string,
     forwardRef?: boolean,
+    ...
   };
 
   declare type SelectorFactoryOptions<Com> = {
@@ -235,6 +237,7 @@ declare module "react-redux" {
     displayName: string,
     wrappedComponentName: string,
     WrappedComponent: Com,
+    ...
   };
 
   declare type MapStateToPropsEx<S: Object, SP: Object, RSP: Object> = (
@@ -261,7 +264,7 @@ declare module "react-redux" {
     OP: Object,
     CP: Object,
     EFO: Object,
-    ST: { [_: $Keys<Com>]: any },
+    ST: { [_: $Keys<Com>]: any, ... },
   >(
     selectorFactory: SelectorFactory<Com, D, S, OP, EFO, CP>,
     connectAdvancedOptions: ?(ConnectAdvancedOptions & EFO),
@@ -272,5 +275,6 @@ declare module "react-redux" {
     createProvider: typeof createProvider,
     connect: typeof connect,
     connectAdvanced: typeof connectAdvanced,
+    ...
   };
 }
