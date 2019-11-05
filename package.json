@@ -21,7 +21,7 @@
     "url": "https://github.com/brettpechiney/react-project-template.git"
   },
   "dependencies": {
-    "@babel/polyfill": "7.6.0",
+    "@babel/polyfill": "7.7.0",
     "react": "16.10.1",
     "react-dom": "16.10.1",
     "react-hot-loader": "4.12.14",
@@ -34,12 +34,12 @@
     "whatwg-fetch": "3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.6.2",
-    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/core": "7.7.0",
+    "@babel/plugin-proposal-class-properties": "7.7.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
-    "@babel/preset-env": "7.6.2",
+    "@babel/preset-env": "7.7.1",
     "@babel/preset-flow": "7.0.0",
-    "@babel/preset-react": "7.0.0",
+    "@babel/preset-react": "7.7.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
@@ -64,8 +64,8 @@
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.15.1",
     "file-loader": "4.2.0",
-    "flow-bin": "0.108.0",
-    "flow-typed": "2.6.1",
+    "flow-bin": "0.111.1",
+    "flow-typed": "2.6.2",
     "friendly-errors-webpack-plugin": "1.7.0",
     "html-webpack-plugin": "3.2.0",
     "husky": "3.0.8",
