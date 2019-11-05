@@ -10,7 +10,7 @@ function resolve(dir) {
 
 module.exports = {
   entry: {
-    app: ['./src/main.jsx'],
+    app: ['react-hot-loader/patch', './src/main.jsx'],
   },
   externals: {
     variables: 'variables',
@@ -27,6 +27,7 @@ module.exports = {
       '@': resolve('src'),
       common: resolve('src/components/common'),
       store: resolve('src/store'),
+      'react-dom': '@hot-loader/react-dom',
     },
   },
   module: {
