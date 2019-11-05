@@ -25,6 +25,7 @@ module.exports = {
 
   globals: {
     jsdom: false,
+    provider: 'readonly',
   },
 
   overrides: [

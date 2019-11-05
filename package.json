@@ -14,7 +14,7 @@
     "postinstall": "flow-typed install",
     "start": "webpack-serve --config ./build/webpack.dev.conf.js",
     "stylelint": "stylelint './src/**/*.jsx'",
-    "test": "node scripts/test.js",
+    "test": "node scripts/test.js --config=environments/jest/jest.config.js",
     "test:pact": "node scripts/test.js --config=environments/jest/jest.config.pact.js --runInBand"
   },
   "repository": {
@@ -42,6 +42,7 @@
     "@babel/preset-env": "7.7.1",
     "@babel/preset-flow": "7.0.0",
     "@babel/preset-react": "7.7.0",
+    "@pact-foundation/pact": "^9.2.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",

@@ -58,7 +58,7 @@ describe('Service', () => {
     });
 
     it('throws HTTPResponseError on failure', async () => {
-      expect.assertions(1);
+      // expect.assertions(1);
 
       // Arrange
       const init = {
@@ -71,14 +71,9 @@ describe('Service', () => {
 
       // Act/Assert
 
-      try {
-        // Act
-        await Service.request(mockEndpoint, 'GET');
-      } catch (e) {
-        // Assert
-        // eslint-disable-next-line jest/no-try-expect
-        expect(e).toBeInstanceOf(HTTPResponseError);
-      }
+      await expect(Service.request(mockEndpoint, 'GET')).rejects.toThrowError(
+        'invalid response'
+      );
     });
   });
 });

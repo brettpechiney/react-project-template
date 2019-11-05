@@ -5,12 +5,12 @@ const path = require('path');
 const utils = require('./utils');
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir);
+  return path.join(environments.projectRoot, dir);
 }
 
 module.exports = {
   entry: {
-    app: ['react-hot-loader/patch', './src/main.jsx'],
+    app: ['./src/main.jsx'],
   },
   externals: {
     variables: 'variables',
@@ -22,12 +22,11 @@ module.exports = {
     publicPath: '/',
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.css', '.scss'],
+    extensions: ['.js', '.jsx', '.api.js', '.json', '.css', '.scss'],
     alias: {
       '@': resolve('src'),
-      common: resolve('src/components/common'),
+      common: resolve('src/common'),
       store: resolve('src/store'),
-      'react-dom': '@hot-loader/react-dom',
     },
   },
   module: {
@@ -45,7 +44,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         include: [resolve('src')],
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         use: [
           {
             loader: 'babel-loader',
@@ -59,7 +58,7 @@ module.exports = {
       },
       {
         test: /\.(js|mjs)$/,
-        include: /(node_modules|bower_components)/,
+        include: /(node_modules)/,
         exclude: /@babel(?:\/|\\{1,2})runtime/,
         loader: 'babel-loader',
       },

@@ -3,6 +3,9 @@
 const path = require('path');
 
 module.exports = {
+  projectRoot: path.resolve(__dirname, '..'),
+  pactServerHost: '127.0.0.1',
+  pactServerPort: 8991,
   dev: {
     assetsSubDirectory: 'static',
   },

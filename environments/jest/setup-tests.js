@@ -1,11 +1,12 @@
 'use-strict';
 
-const Enzyme = require('enzyme');
-const Adapter = require('enzyme-adapter-react-16');
+const { pactServerHost, pactServerPort } = require('../');
 
+const Adapter = require('enzyme-adapter-react-16');
+const Enzyme = require('enzyme');
 Enzyme.configure({ adapter: new Adapter() });
 
 global.variables = {
-  apiUrl: 'http://localhost:8080',
+  apiUrl: `${pactServerHost}:${pactServerPort}`,
   logRedux: false,
 };
