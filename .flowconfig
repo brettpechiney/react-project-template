@@ -1,20 +1,18 @@
+[version]
+0.111.1
+
 [ignore]
 .*/node_modules/.*
 .*/build/.*
 
-[include]
-
-[libs]
-flow-typed
 
 [lints]
 all=warn
 
 [options]
-include_warnings=true
-
-module.system.node.resolve_dirname=node_modules
-module.system.node.resolve_dirname=src
+module.name_mapper='^@' ->'<PROJECT_ROOT>/src'
+module.name_mapper='^common' ->'<PROJECT_ROOT>/src/common'
+module.name_mapper='^store' ->'<PROJECT_ROOT>/src/store'
 
 esproposal.decorators=ignore
 esproposal.class_static_fields=enable

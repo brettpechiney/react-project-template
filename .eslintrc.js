@@ -18,6 +18,7 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:flowtype/recommended',
     'prettier/flowtype',
     'prettier/react',
   ],
@@ -59,7 +60,15 @@ module.exports = {
     },
   },
 
-  plugins: ['jest', 'jsx-a11y', 'react', 'import', 'prettier'],
+  plugins: [
+    'jest',
+    'jsx-a11y',
+    'react',
+    'import',
+    'prettier',
+    'react-hooks',
+    'flowtype',
+  ],
 
   settings: {
     'import/resolver': {
@@ -87,5 +96,8 @@ module.exports = {
     // React and JSX
     'react/jsx-boolean-value': [ERROR, 'always'],
     'react/jsx-no-undef': ERROR,
+
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };
