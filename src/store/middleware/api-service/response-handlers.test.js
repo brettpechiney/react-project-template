@@ -50,11 +50,12 @@ describe('handleRejected', () => {
   });
 
   it("calls the 'next' function", async () => {
-    expect.assertions(1);
     try {
       await handleRejected(err, action, next);
     } catch (e) {
-      expect(next).toHaveBeenCalledTimes(1);
+      // Do nothing because we just need to swallow the error.
     }
+
+    expect(next).toHaveBeenCalledTimes(1);
   });
 });
