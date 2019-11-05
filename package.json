@@ -14,7 +14,8 @@
     "postinstall": "flow-typed install",
     "start": "webpack-serve --config ./build/webpack.dev.conf.js",
     "stylelint": "stylelint './src/**/*.jsx'",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js --config=environments/jest/jest.config.js",
+    "test:pact": "node scripts/test.js --config=environments/jest/jest.config.pact.js --runInBand"
   },
   "repository": {
     "type": "git",
@@ -41,6 +42,7 @@
     "@babel/preset-env": "7.7.1",
     "@babel/preset-flow": "7.0.0",
     "@babel/preset-react": "7.7.0",
+    "@pact-foundation/pact": "^9.2.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
@@ -64,6 +66,8 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "fetch-mock": "7.7.3",
     "file-loader": "4.2.0",
     "flow-bin": "0.111.1",
     "flow-typed": "2.6.2",
@@ -72,9 +76,9 @@
     "husky": "3.0.9",
     "identity-obj-proxy": "3.0.0",
     "jest": "24.9.0",
-    "jest-fetch-mock": "2.1.2",
     "koa-connect": "2.0.1",
     "lint-staged": "9.4.2",
+    "node-fetch": "^2.6.0",
     "ora": "4.0.2",
     "prettier": "1.18.2",
     "react-test-renderer": "16.11.0",

@@ -2,13 +2,14 @@
 
 exports[`<LoadingIndicator /> renders correctly 1`] = `
 <div
-  className="LoadingIndicator__Wrapper-sc-2qo9ua-0 fYizDL"
+  className="LoadingIndicator__StyleWrapper-sc-2qo9ua-0 duaeZx"
 >
   <img
     alt="loading..."
-    height="80px"
+    data-test="vertafore-logo-indicator"
+    height="180px"
     src="loading-indicator.gif"
-    width="80px"
+    width="320px"
   />
 </div>
 `;

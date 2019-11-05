@@ -12,4 +12,6 @@ global.sessionStorage = {
 
 if (typeof window !== 'undefined') {
   require('whatwg-fetch');
+} else {
+  global.fetch = require('node-fetch');
 }

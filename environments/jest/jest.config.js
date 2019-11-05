@@ -1,16 +1,18 @@
 'use strict';
 
+const environments = require('../');
+
 module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{js,jsx,mjs}',
-    '!**/index*.js',
+    '!**/index.js',
+    '!**/*.api.js',
     '!<rootDir>/src/main.jsx',
+    '!<rootDir>/src/common/contexts',
     '!<rootDir>/src/store/configure-store.js',
     '!<rootDir>/src/store/middleware/api-service/errors.js',
     '!<rootDir>/src/store/slices/root*.js',
     '!<rootDir>/src/store/slices/busy/*',
-    '!<rootDir>/src/store/operations.js',
-    '!<rootDir>/src/store/selectors.js',
   ],
   coverageThreshold: {
     global: {
@@ -20,16 +22,20 @@ module.exports = {
       statements: 85,
     },
   },
+  errorOnDeprecated: true,
+  moduleFileExtensions: ['js', 'json', 'jsx', 'api.js', 'ts', 'tsx', 'node'],
   moduleNameMapper: {
     '\\.(css|less|scss|style)$': 'identity-obj-proxy',
     '^@[/](.+)': '<rootDir>/src/$1',
-    '^common[/](.+)': '<rootDir>/src/components/common/$1',
+    '^common[/](.+)': '<rootDir>/src/common/$1',
   },
+  rootDir: environments.projectRoot,
   setupFiles: [
     '<rootDir>/environments/jest/polyfills.js',
     '<rootDir>/environments/jest/setup-tests.js',
   ],
   testEnvironment: 'jsdom',
+  testRegex: '\\.(test)\\.jsx?$',
   testPathIgnorePatterns: ['<rootDir>/scripts', '<rootDir>/environments'],
   testURL: 'http://localhost/',
   transform: {
