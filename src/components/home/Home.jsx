@@ -7,7 +7,7 @@ const Home = () => (
       This application was made with{' '}
       <span role="img" aria-label="love">
         ❤️
-      </span>{' '}
+      </span>
       by Brett
     </p>
   </Wrapper>
